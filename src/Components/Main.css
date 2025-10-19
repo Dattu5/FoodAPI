@@ -106,7 +106,7 @@ transform: scale(1.1);
 }
 #main1{
    width: 160px;
-   height: 220px;
+   height: 230px;
   box-shadow: 0 4px 6px rgba(72, 71, 71, 0.5);   
 }
 #maini{
@@ -122,7 +122,7 @@ transform: scale(1.1);
  
 }
 #img1{
-    width: 150px;
+    width: 130px;
    height: 90px;
 
 }
@@ -135,6 +135,7 @@ transform: scale(1.1);
 }
 #see{
    margin-top: 10px;
+   padding: 4px;
 }
 #div5 #img1{
  width: 390px;
