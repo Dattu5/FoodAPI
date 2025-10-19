@@ -1,22 +1,29 @@
-import React from 'react'
+ import React from 'react';
 import { useNavigate } from 'react-router-dom';
- export default function Home() {
 
-const navigate = useNavigate();
+export default function Home() {
+  const navigate = useNavigate();
 
   const containerStyle = {
-    position: 'relative',
     width: '100vw',
-    height: '100vh',
+    height: '100dvh',   // dynamic viewport height
+    overflow: 'hidden',
+    margin: 0,
+    padding: 0,
   };
 
   const bgStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+     transform: 'scale(1.1)', 
+    width: '100vw',
+    height: '100dvh',
     backgroundImage: 'url(food.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    width: '100%',
-    height: '100%',
-    filter: 'brightness(50%)', // <-- makes image darker
+    filter: 'brightness(50%)',
+    zIndex: -1,
   };
 
   const contentStyle = {
@@ -26,10 +33,11 @@ const navigate = useNavigate();
     transform: 'translate(-50%, -50%)',
     color: 'white',
     textAlign: 'center',
+    padding: '0 20px',
   };
 
   const buttonStyle = {
-    padding: '15px 80px',
+    padding: '15px 60px',   // slightly smaller for mobile
     fontSize: '18px',
     borderRadius: '5px',
     border: 'none',
@@ -41,15 +49,14 @@ const navigate = useNavigate();
   };
 
   return (
-    
-  <div style={containerStyle}>
+    <div style={containerStyle}>
       <div style={bgStyle}></div>
       <div style={contentStyle}>
         <h1>Good food, good life!</h1>
-        <button style={buttonStyle} onClick={() => navigate('/main')}>Explore</button>
+        <button style={buttonStyle} onClick={() => navigate('/main')}>
+          Explore
+        </button>
       </div>
     </div>
   );
 }
-
-  
